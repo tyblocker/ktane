@@ -1,8 +1,8 @@
-# Keep Talking and Nobody Explodes Guide
+# Keep Talking and Nobody Explodes Assistant
 An alternative bomb defusal manual.
 
 ## Features:
-* Command-line prompts enable quicker and easier defusal instructions
+* Command-line prompts (GUI coming soon) enable quicker and easier defusal instructions
 * Currently includes the following modules (with more to come)
 	* Wires
 	* Button
