@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\ktane-master\Ktane Guide.cpp">
+    <ClCompile Include="Ktane Guide.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
