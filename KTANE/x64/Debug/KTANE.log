@@ -1,9 +1,1 @@
-﻿  Ktane Guide.cpp
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(31): warning C4326: return type of 'main' should be 'int' instead of 'void'
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(623): warning C4101: 'three_dis': unreferenced local variable
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(626): warning C4101: 'three_three': unreferenced local variable
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(625): warning C4101: 'three_two': unreferenced local variable
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(627): warning C4101: 'three_four': unreferenced local variable
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(628): warning C4101: 'four_dis': unreferenced local variable
-c:\google drive\documents\git repos\ktane\ktane\ktane guide.cpp(624): warning C4101: 'three_one': unreferenced local variable
-  KTANE.vcxproj -> C:\Google Drive\Documents\Git Repos\ktane\x64\Debug\KTANE.exe
+﻿  KTANE.vcxproj -> C:\Google Drive\Documents\Git Repos\ktane\x64\Debug\KTANE.exe

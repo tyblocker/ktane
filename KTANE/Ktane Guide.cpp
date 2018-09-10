@@ -163,21 +163,22 @@ void information()
 
 	//Test if Last Digit is even
 	strPtr = strstr(line, "2");
-	if (strstr(line, "2") != 0 && (std::char_traits<char>::length(strPtr)) == 1) {
+	if ((strstr(line, "2") != 0) && ((std::char_traits<char>::length(strPtr)) == 1)) {
 		::even = 1;
 	}
 	else {
 		strPtr = strstr(line, "4");
-		if (strstr(line, "4") != 0 && (std::char_traits<char>::length(strPtr)) == 1) {
+		if ((strstr(line, "4") != 0) && ((std::char_traits<char>::length(strPtr)) == 1)) {
 			::even = 1;
 		}
 		else {
-			if (strstr(line, "6") != 0 && (std::char_traits<char>::length(strPtr)) == 1) {
+			strPtr = strstr(line, "6");
+			if ((strstr(line, "6") != 0) && ((std::char_traits<char>::length(strPtr)) == 1)) {
 				::even = 1;
 			}
 			else {
 				strPtr = strstr(line, "8");
-				if (strstr(line, "8") != 0 && (std::char_traits<char>::length(strPtr)) == 1) {
+				if ((strstr(line, "8") != 0) && ((std::char_traits<char>::length(strPtr)) == 1)) {
 					::even = 1;
 				}
 				else {
@@ -332,7 +333,7 @@ void button()
 			cout << endl << "Release when there is a 5 in any position.";
 		}
 		else {
-			cout << endl << "Release when there is a 5 in any position.";
+			cout << endl << "Release when there is a 1 in any position.";
 		}
 	}
 }
@@ -615,37 +616,60 @@ void memory()
 	int one_two;
 	int one_three;
 	int one_four;
+	int one_resultPos;
+	int one_resultLab;
 	int two_dis;
 	int two_one;
 	int two_two;
 	int two_three;
 	int two_four;
+	int two_resultPos;
+	int two_resultLab;
 	int three_dis;
 	int three_one;
 	int three_two;
 	int three_three;
 	int three_four;
+	int three_resultPos;
+	int three_resultLab;
 	int four_dis;
+	int four_one;
+	int four_two;
+	int four_three;
+	int four_four;
+	int four_resultPos;
+	int four_resultLab;
+	int five_dis;
+	int five_one;
+	int five_two;
+	int five_three;
+	int five_four;
 	char correct;
 
-	StageOne:
-	cout << endl << "Stage One: enter the nuber on the display and all four positions separated by spaces.";
+StageOne:
+	cout << endl << "Stage One: enter the number on the display and all four positions separated by spaces.";
 	cin >> one_dis >> one_one >> one_two >> one_three >> one_four;
 	if ((one_dis == 1) || (one_dis == 2)) {
 		cout << endl << "Press the button labeled " << one_two;
+		one_resultPos = 2;
+		one_resultLab = one_two;
 	}
 	else if (one_dis == 3) {
 		cout << endl << "Press the button labeled " << one_three;
+		one_resultPos = 3;
+		one_resultLab = one_three;
 	}
 	else if (one_dis == 4) {
 		cout << endl << "Press the button labeled " << one_four;
+		one_resultPos = 4;
+		one_resultLab = one_four;
 	}
 	else {
-		cout << endl << "Enter a valid display number.";
+		cout << endl << "Please enter a valid number array.";
 		goto StageOne;
 	}
 	
-	CheckCorrectOne:
+CheckCorrectOne:
 	cout << endl << "Correct?(Y/N) ";
 	cin >> correct;
 	if (toupper(correct) == 'Y') {
@@ -659,32 +683,32 @@ void memory()
 		goto CheckCorrectOne;
 	}
 
-	StageTwo:
-	cout << endl << "Stage Two: enter the nuber on the display and all four positions separated by spaces.";
+StageTwo:
+	cout << endl << "Stage Two: enter the number on the display and all four positions separated by spaces.";
 	cin >> two_dis >> two_one >> two_two >> two_three >> two_four;
 	if (two_dis == 1) {
 		cout << endl << "Press the button labeled '4'";
+		cout << endl << "What position? ";
+		cin >> two_resultPos;
+		two_resultLab = 4;
 	}
 	else if ((two_dis == 2) || (two_dis == 4)) {
-		if ((one_dis == 1) || (one_dis == 2)) {
-			cout << endl << "Press the button in the second position";
-		}
-		else if (one_dis == 3) {
-			cout << endl << "Press the button in the third position";
-		}
-		else if (one_dis == 4) {
-			cout << endl << "Press the button in the fourth position";
-		}
+		cout << endl << "Press the button in position " << one_resultPos;
+		cout << endl << "What label? ";
+		cin >> two_resultLab;
+		two_resultPos = one_resultPos;
 	}
 	else if (two_dis == 3) {
 		cout << endl << "Press the button in the first position";
+		two_resultPos = 1;
+		two_resultLab = two_one;
 	}
 	else {
-		cout << endl << "Please enter a valid display number.";
+		cout << endl << "Please enter a valid number array.";
 		goto StageTwo;
 	}
 
-	CheckCorrectTwo:
+CheckCorrectTwo:
 	cout << endl << "Correct?(Y/N) ";
 	cin >> correct;
 	if (toupper(correct) == 'Y') {
@@ -698,10 +722,122 @@ void memory()
 		goto CheckCorrectTwo;
 	}
 
-	StageThree:
-	cout << endl << "This is a placeholder for stage 3.";
+StageThree:
+	cout << endl << "Stage Three: enter the number on the display and all four positions separated by spaces.";
+	cin >> three_dis >> three_one >> three_two >> three_three >> three_four;
+	if (three_dis == 1) {
+		cout << endl << "Press the button with the label '" << two_resultLab << "'";
+		cout << endl << "What position? ";
+		cin >> three_resultPos;
+		three_resultLab = two_resultLab;
+	}
+	else if (three_dis == 2) {
+		cout << endl << "Press the button with the label '" << one_resultLab << "'";
+		cout << endl << "What position? ";
+		cin >> three_resultPos;
+		three_resultLab = one_resultLab;
+	}
+	else if (three_dis == 3) {
+		cout << endl << "Press the button in the third position";
+		three_resultPos = 3;
+		three_resultLab = three_three;
+	}
+	else if (three_dis == 4) {
+		cout << endl << "Press the button labeled '4'";
+		cout << endl << "What position? ";
+		cin >> three_resultPos;
+		three_resultLab = 4;
+	}
+	else {
+		cout << endl << "Please enter a valid number array.";
+		goto StageThree;
+	}
 
+CheckCorrectThree:
+	cout << endl << "Correct?(Y/N) ";
+	cin >> correct;
+	if (toupper(correct) == 'Y') {
+		goto StageFour;
+	}
+	else if (toupper(correct) == 'N') {
+		goto StageOne;
+	}
+	else {
+		cout << endl << "Enter a valid input.";
+		goto CheckCorrectThree;
+	}
 
+StageFour:
+	cout << endl << "Stage Four: enter the number on the display and all four positions separated by spaces.";
+	cin >> four_dis >> four_one >> four_two >> four_three >> four_four;
+	if (four_dis == 1) {
+		cout << endl << "Press the button in position " << one_resultPos;
+		cout << endl << "What label? ";
+		cin >> four_resultLab;
+		four_resultPos = one_resultPos;
+	}
+	else if (four_dis == 2) {
+		cout << endl << "Press the button in the first position";
+		four_resultPos = 1;
+		four_resultLab = four_one;
+	}
+	else if ((four_dis == 3) || (four_dis == 4)) {
+		cout << endl << "Press the button in position " << two_resultPos;
+		cout << endl << "What label? ";
+		cin >> four_resultLab;
+		four_resultPos = two_resultPos;
+	}
+	else {
+		cout << endl << "Please enter a valid number array.";
+		goto StageFour;
+	}
+
+CheckCorrectFour:
+	cout << endl << "Correct?(Y/N) ";
+	cin >> correct;
+	if (toupper(correct) == 'Y') {
+		goto StageFive;
+	}
+	else if (toupper(correct) == 'N') {
+		goto StageOne;
+	}
+	else {
+		cout << endl << "Enter a valid input.";
+		goto CheckCorrectFour;
+	}
+
+StageFive:
+	cout << endl << "Stage Five: enter the number on the display and all four positions separated by spaces.";
+	cin >> five_dis >> five_one >> five_two >> five_three >> five_four;
+	if (five_dis == 1) {
+		cout << endl << "Press the button labeled '" << one_resultLab << "'";
+	}
+	else if (five_dis == 2) {
+		cout << endl << "Press the button labeled '" << two_resultLab << "'";
+	}
+	else if (five_dis == 3) {
+		cout << endl << "Press the button labeled '" << four_resultLab << "'";
+	}
+	else if (five_dis == 4) {
+		cout << endl << "Press the button labeled '" << three_resultLab << "'";
+	}
+	else {
+		cout << endl << "Please enter a valid number array.";
+		goto StageFive;
+	}
+
+CheckCorrectFive:
+	cout << endl << "Correct?(Y/N) ";
+	cin >> correct;
+	if (toupper(correct) == 'Y') {
+	}
+	else if (toupper(correct) == 'N') {
+		goto StageOne;
+	}
+	else {
+		cout << endl << "Enter a valid input.";
+		goto CheckCorrectFive;
+	}
 }
 
 void morsecode()
