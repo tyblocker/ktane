@@ -1,4 +1,4 @@
-# Keep Talking and Nobody Explodes Assistant
+# Keep Talking and Nobody Explodes Assistant ![Icon](https://github.com/Raeffion/ktane/blob/master/x64/Debug/KTANE.exe)
 An alternative bomb defusal manual.
 
 ## Features:
