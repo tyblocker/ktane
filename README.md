@@ -1,4 +1,4 @@
-# <img src="https://github.com/tyblocker/ktane/tree/master/KTANE/ktanepsd.png" width="50" height="50"> Keep Talking and Nobody Explodes Assistant
+# <img src="https://github.com/tyblocker/ktane/blob/master/KTANE/ktanepsd.png" width="50" height="50"> Keep Talking and Nobody Explodes Assistant
 An alternative bomb defusal manual.
 
 ## Features:
