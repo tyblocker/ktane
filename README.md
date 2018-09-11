@@ -1,4 +1,4 @@
-# Keep Talking and Nobody Explodes Assistant ![Icon](https://github.com/Raeffion/ktane/blob/master/KTANE/ktanepsd.png =64x64)
+# Keep Talking and Nobody Explodes Assistant ![Icon](https://github.com/Raeffion/ktane/blob/master/KTANE/ktanepsd.png =250x250)
 An alternative bomb defusal manual.
 
 ## Features:
