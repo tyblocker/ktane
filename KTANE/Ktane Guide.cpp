@@ -31,9 +31,9 @@ void main()
 {
 	char module[17];
 	char more;
-	
+
 	information();
-	
+
 	/*if (::vowel == 1) {
 		cout << "The Serial Number has at least one vowel." << endl;
 	}
@@ -120,6 +120,10 @@ void main()
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
+		else {
+			cout << endl << "Enter a valid input.";
+			more = 'Y';
+		}
 	} while (toupper(more) == 'Y');
 }
 
@@ -198,7 +202,7 @@ void wires()
 	int black;
 	int white;
 	char test;
-	
+
 	cout << "How many wires? ";
 	cin >> wires;
 	if (wires == 3) {
@@ -241,22 +245,22 @@ void wires()
 			else {
 				cout << endl << "How many blue wires? ";
 				cin >> blue;
-					if (blue == 1) {
-						cout << endl << "Cut the first wire.";
+				if (blue == 1) {
+					cout << endl << "Cut the first wire.";
+				}
+				else {
+					cout << endl << "How many yellow wires? ";
+					cin >> yellow;
+					if (yellow > 1) {
+						cout << endl << "Cut the last wire.";
 					}
 					else {
-						cout << endl << "How many yellow wires? ";
-						cin >> yellow;
-						if (yellow > 1) {
-							cout << endl << "Cut the last wire.";
-						}
-						else {
-							cout << endl << "Cut the second wire.";
-						}
+						cout << endl << "Cut the second wire.";
 					}
 				}
 			}
 		}
+	}
 	if (wires == 5) {
 		cout << endl << "Is the last wire black?(Y/N) ";
 		cin >> test;
@@ -604,8 +608,7 @@ void whosonfirst()
 		}
 		cout << endl << "Next Stage?(Y/N) ";
 		cin >> more;
-	}
-	while (toupper(more) == 'Y');
+	} while (toupper(more) == 'Y');
 
 }
 
@@ -668,7 +671,7 @@ StageOne:
 		cout << endl << "Please enter a valid number array.";
 		goto StageOne;
 	}
-	
+
 CheckCorrectOne:
 	cout << endl << "Correct?(Y/N) ";
 	cin >> correct;
@@ -847,7 +850,133 @@ void morsecode()
 
 void complicatedwires()
 {
+	char color[5];
+	bool star;
+	bool led;
+	char next;
 
+	cout << endl << "Describe the wire by its color, status of star, and status of led, separated by spaces.";
+	cout << endl << "Example: \"BOTH 1 0\" and \"WHITE 0 0\"" << endl;
+	cin >> color >> star >> led;
+	if (strcmp(color, "WHITE") == 0) {
+		if ((star == 0) && (led == 0)) {
+			cout << endl << "Cut the wire";
+		}
+		else if ((star == 0) && (led == 1)) {
+			cout << endl << "Do not cut the wire";
+		}
+		else if ((star == 1) && (led == 0)) {
+			cout << endl << "Cut the wire";
+		}
+		else if ((star == 1) && (led == 1)) {
+			if (::batteries >= 2) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+	}
+	else if (strcmp(color, "RED") == 0) {
+		if ((star == 0) && (led == 0)) {
+			if (::even == 1) {
+				cout << endl << "Cut the wire";
+			}
+			else if (::even == 0) {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 0) && (led == 1)) {
+			if (::batteries >= 2) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 1) && (led == 0)) {
+			cout << endl << "Cut the wire";
+		}
+		else if ((star == 1) && (led == 1)) {
+			if (::batteries >= 2) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+	}
+	else if (strcmp(color, "BLUE") == 0) {
+		if ((star == 0) && (led == 0)) {
+			if (::even == 1) {
+				cout << endl << "Cut the wire";
+			}
+			else if (::even == 0) {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 0) && (led == 1)) {
+			if (::Parallel >= 1) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 1) && (led == 0)) {
+			cout << endl << "Do not cut the wire";
+		}
+		else if ((star == 1) && (led == 1)) {
+			if (::Parallel >= 1) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+	}
+	else if (strcmp(color, "BOTH") == 0) {
+		if ((star == 0) && (led == 0)) {
+			if (::even == 1) {
+				cout << endl << "Cut the wire";
+			}
+			else if (::even == 0) {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 0) && (led == 1)) {
+			if (::even == 1) {
+				cout << endl << "Cut the wire";
+			}
+			else if (::even == 0) {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 1) && (led == 0)) {
+			if (::Parallel >= 1) {
+				cout << endl << "Cut the wire";
+			}
+			else {
+				cout << endl << "Do not cut the wire";
+			}
+		}
+		else if ((star == 1) && (led == 1)) {
+			cout << endl << "Do not cut the wire";
+		}
+	}
+
+Next:
+	cout << endl << "Next wire?(Y/N) ";
+	cin >> next;
+	if (toupper(next) == 'Y') {
+		complicatedwires();
+	}
+	else if (toupper(next) == 'N') {
+	}
+	else {
+		cout << endl << "Enter a valid response.";
+		goto Next;
+	}
 }
 
 void wiresequence()
