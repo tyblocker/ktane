@@ -850,7 +850,7 @@ void morsecode()
 
 void complicatedwires()
 {
-	char color[5];
+	char color[6];
 	bool star;
 	bool led;
 	char next;
@@ -991,5 +991,157 @@ void maze()
 
 void password()
 {
+	char one_one;
+	char one_two;
+	char one_three;
+	char one_four;
+	char one_five;
+	char one_six;
+	char two_one;
+	char two_two;
+	char two_three;
+	char two_four;
+	char two_five;
+	char two_six;
+	char three_one;
+	char three_two;
+	char three_three;
+	char three_four;
+	char three_five;
+	char three_six;
 
+	cout << endl << "Enter the 6 letters of the first column, separated by spaces" << endl;
+	cin >> one_one >> one_two >> one_three >> one_four >> one_five >> one_six;
+	cout << endl << "Enter the 6 letters of the second column, separated by spaces" << endl;
+	cin >> two_one >> two_two >> two_three >> two_four >> two_five >> two_six;
+	cout << endl << "Enter the 6 letters of the third column, separated by spaces" << endl;
+	cin >> three_one >> three_two >> three_three >> three_four >> three_five >> three_six;
+
+	if ((toupper(one_one) == 'A') || (toupper(one_two) == 'A') || (toupper(one_three) == 'A') || (toupper(one_four) == 'A') || (toupper(one_five) == 'A') || (toupper(one_six) == 'A')) {
+		if ((toupper(two_one) == 'B') || (toupper(two_two) == 'B') || (toupper(two_three) == 'B') || (toupper(two_four) == 'B') || (toupper(two_five) == 'B') || (toupper(two_six) == 'B')) {
+
+		}
+		else if ((toupper(two_one) == 'B') || (toupper(two_two) == 'B') || (toupper(two_three) == 'B') || (toupper(two_four) == 'B') || (toupper(two_five) == 'B') || (toupper(two_six) == 'B')) {
+
+		}
+		else if ((toupper(two_one) == 'F') || (toupper(two_two) == 'F') || (toupper(two_three) == 'F') || (toupper(two_four) == 'F') || (toupper(two_five) == 'F') || (toupper(two_six) == 'F')) {
+
+		}
+		else if ((toupper(two_one) == 'G') || (toupper(two_two) == 'G') || (toupper(two_three) == 'G') || (toupper(two_four) == 'G') || (toupper(two_five) == 'G') || (toupper(two_six) == 'G')) {
+
+		}
+	}
+	else if ((toupper(one_one) == 'B') || (toupper(one_two) == 'B') || (toupper(one_three) == 'B') || (toupper(one_four) == 'B') || (toupper(one_five) == 'B') || (toupper(one_six) == 'B')) {
+		if ((toupper(two_one) == 'E') || (toupper(two_two) == 'E') || (toupper(two_three) == 'E') || (toupper(two_four) == 'E') || (toupper(two_five) == 'E') || (toupper(two_six) == 'E')) {
+			if ((toupper(three_one) == 'L') || (toupper(three_two) == 'L') || (toupper(three_three) == 'L') || (toupper(three_four) == 'L') || (toupper(three_five) == 'L') || (toupper(three_six) == 'L')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'C') || (toupper(one_two) == 'C') || (toupper(one_three) == 'C') || (toupper(one_four) == 'C') || (toupper(one_five) == 'C') || (toupper(one_six) == 'C')) {
+		if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+			if ((toupper(three_one) == 'U') || (toupper(three_two) == 'U') || (toupper(three_three) == 'U') || (toupper(three_four) == 'U') || (toupper(three_five) == 'U') || (toupper(three_six) == 'U')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'E') || (toupper(one_two) == 'E') || (toupper(one_three) == 'E') || (toupper(one_four) == 'E') || (toupper(one_five) == 'E') || (toupper(one_six) == 'E')) {
+		if ((toupper(two_one) == 'V') || (toupper(two_two) == 'V') || (toupper(two_three) == 'V') || (toupper(two_four) == 'V') || (toupper(two_five) == 'V') || (toupper(two_six) == 'V')) {
+			if ((toupper(three_one) == 'E') || (toupper(three_two) == 'E') || (toupper(three_three) == 'E') || (toupper(three_four) == 'E') || (toupper(three_five) == 'E') || (toupper(three_six) == 'E')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'F') || (toupper(one_two) == 'F') || (toupper(one_three) == 'F') || (toupper(one_four) == 'F') || (toupper(one_five) == 'F') || (toupper(one_six) == 'F')) {
+		if ((toupper(two_one) == 'I') || (toupper(two_two) == 'I') || (toupper(two_three) == 'I') || (toupper(two_four) == 'I') || (toupper(two_five) == 'I') || (toupper(two_six) == 'I')) {
+
+		}
+		else if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+
+		}
+	}
+	else if ((toupper(one_one) == 'G') || (toupper(one_two) == 'G') || (toupper(one_three) == 'G') || (toupper(one_four) == 'G') || (toupper(one_five) == 'G') || (toupper(one_six) == 'G')) {
+		if ((toupper(two_one) == 'R') || (toupper(two_two) == 'R') || (toupper(two_three) == 'R') || (toupper(two_four) == 'R') || (toupper(two_five) == 'R') || (toupper(two_six) == 'R')) {
+			if ((toupper(three_one) == 'E') || (toupper(three_two) == 'E') || (toupper(three_three) == 'E') || (toupper(three_four) == 'E') || (toupper(three_five) == 'E') || (toupper(three_six) == 'E')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'H') || (toupper(one_two) == 'H') || (toupper(one_three) == 'H') || (toupper(one_four) == 'H') || (toupper(one_five) == 'H') || (toupper(one_six) == 'H')) {
+		if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+			if ((toupper(three_one) == 'U') || (toupper(three_two) == 'U') || (toupper(three_three) == 'U') || (toupper(three_four) == 'U') || (toupper(three_five) == 'U') || (toupper(three_six) == 'U')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'L') || (toupper(one_two) == 'L') || (toupper(one_three) == 'L') || (toupper(one_four) == 'L') || (toupper(one_five) == 'L') || (toupper(one_six) == 'L')) {
+		if ((toupper(two_one) == 'A') || (toupper(two_two) == 'A') || (toupper(two_three) == 'A') || (toupper(two_four) == 'A') || (toupper(two_five) == 'A') || (toupper(two_six) == 'A')) {
+
+		}
+		else if ((toupper(two_one) == 'E') || (toupper(two_two) == 'E') || (toupper(two_three) == 'E') || (toupper(two_four) == 'E') || (toupper(two_five) == 'E') || (toupper(two_six) == 'E')) {
+
+		}
+	}
+	else if ((toupper(one_one) == 'N') || (toupper(one_two) == 'N') || (toupper(one_three) == 'N') || (toupper(one_four) == 'N') || (toupper(one_five) == 'N') || (toupper(one_six) == 'N')) {
+		if ((toupper(two_one) == 'E') || (toupper(two_two) == 'E') || (toupper(two_three) == 'E') || (toupper(two_four) == 'E') || (toupper(two_five) == 'E') || (toupper(two_six) == 'E')) {
+			if ((toupper(three_one) == 'V') || (toupper(three_two) == 'V') || (toupper(three_three) == 'V') || (toupper(three_four) == 'V') || (toupper(three_five) == 'V') || (toupper(three_six) == 'V')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'O') || (toupper(one_two) == 'O') || (toupper(one_three) == 'O') || (toupper(one_four) == 'O') || (toupper(one_five) == 'O') || (toupper(one_six) == 'O')) {
+		if ((toupper(two_one) == 'T') || (toupper(two_two) == 'T') || (toupper(two_three) == 'T') || (toupper(two_four) == 'T') || (toupper(two_five) == 'T') || (toupper(two_six) == 'T')) {
+			if ((toupper(three_one) == 'H') || (toupper(three_two) == 'H') || (toupper(three_three) == 'H') || (toupper(three_four) == 'H') || (toupper(three_five) == 'H') || (toupper(three_six) == 'H')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'P') || (toupper(one_two) == 'P') || (toupper(one_three) == 'P') || (toupper(one_four) == 'P') || (toupper(one_five) == 'P') || (toupper(one_six) == 'P')) {
+		if ((toupper(two_one) == 'L') || (toupper(two_two) == 'L') || (toupper(two_three) == 'L') || (toupper(two_four) == 'L') || (toupper(two_five) == 'L') || (toupper(two_six) == 'L')) {
+
+		}
+		else if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+
+		}
+	}
+	else if ((toupper(one_one) == 'R') || (toupper(one_two) == 'R') || (toupper(one_three) == 'R') || (toupper(one_four) == 'R') || (toupper(one_five) == 'R') || (toupper(one_six) == 'R')) {
+		if ((toupper(two_one) == 'I') || (toupper(two_two) == 'I') || (toupper(two_three) == 'I') || (toupper(two_four) == 'I') || (toupper(two_five) == 'I') || (toupper(two_six) == 'I')) {
+			if ((toupper(three_one) == 'G') || (toupper(three_two) == 'G') || (toupper(three_three) == 'G') || (toupper(three_four) == 'G') || (toupper(three_five) == 'G') || (toupper(three_six) == 'G')) {
+
+			}
+		}
+	}
+	else if ((toupper(one_one) == 'S') || (toupper(one_two) == 'S') || (toupper(one_three) == 'S') || (toupper(one_four) == 'S') || (toupper(one_five) == 'S') || (toupper(one_six) == 'S')) {
+		if ((toupper(two_one) == 'M') || (toupper(two_two) == 'M') || (toupper(two_three) == 'M') || (toupper(two_four) == 'M') || (toupper(two_five) == 'M') || (toupper(two_six) == 'M')) {
+
+		}
+		else if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+
+		}
+		else if ((toupper(two_one) == 'P') || (toupper(two_two) == 'P') || (toupper(two_three) == 'P') || (toupper(two_four) == 'P') || (toupper(two_five) == 'P') || (toupper(two_six) == 'P')) {
+
+		}
+		else if ((toupper(two_one) == 'T') || (toupper(two_two) == 'T') || (toupper(two_three) == 'T') || (toupper(two_four) == 'T') || (toupper(two_five) == 'T') || (toupper(two_six) == 'T')) {
+
+		}
+	}
+	else if ((toupper(one_one) == 'T') || (toupper(one_two) == 'T') || (toupper(one_three) == 'T') || (toupper(one_four) == 'T') || (toupper(one_five) == 'T') || (toupper(one_six) == 'T')) {
+		if ((toupper(two_one) == 'H') || (toupper(two_two) == 'H') || (toupper(two_three) == 'H') || (toupper(two_four) == 'H') || (toupper(two_five) == 'H') || (toupper(two_six) == 'H')) {
+			
+		}
+	}
+	else if ((toupper(one_one) == 'W') || (toupper(one_two) == 'W') || (toupper(one_three) == 'W') || (toupper(one_four) == 'W') || (toupper(one_five) == 'W') || (toupper(one_six) == 'W')) {
+		if ((toupper(two_one) == 'A') || (toupper(two_two) == 'A') || (toupper(two_three) == 'A') || (toupper(two_four) == 'A') || (toupper(two_five) == 'A') || (toupper(two_six) == 'A')) {
+			
+		}
+		else if ((toupper(two_one) == 'H') || (toupper(two_two) == 'H') || (toupper(two_three) == 'H') || (toupper(two_four) == 'H') || (toupper(two_five) == 'H') || (toupper(two_six) == 'H')) {
+
+		}
+		if ((toupper(two_one) == 'O') || (toupper(two_two) == 'O') || (toupper(two_three) == 'O') || (toupper(two_four) == 'O') || (toupper(two_five) == 'O') || (toupper(two_six) == 'O')) {
+			
+		}
+		else if ((toupper(two_one) == 'R') || (toupper(two_two) == 'R') || (toupper(two_three) == 'R') || (toupper(two_four) == 'R') || (toupper(two_five) == 'R') || (toupper(two_six) == 'R')) {
+			
+		}
+	}
 }
