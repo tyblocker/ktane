@@ -1,7 +1,5 @@
 #include <iostream>
-#include <string>
 #include <iomanip>
-#include <Windows.h>
 #include <cstring>
 #include <istream>
 
@@ -63,59 +61,64 @@ void main()
 
 	do
 	{
-		cout << endl << "Which module in full lowercase? ";
-		cin >> module;
-		if (strcmp(module, "wires") == 0) {
+		cout << endl << "Which module? ";
+		cin.ignore();
+		cin.getline(module, 17);
+		for (int i = 0; i < 17; i++)
+		{
+			module[i] = toupper(module[i]);
+		}
+		if (strcmp(module, "WIRES") == 0) {
 			wires();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "button") == 0) {
+		else if (strcmp(module, "BUTTON") == 0) {
 			button();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "keypad") == 0) {
+		else if (strcmp(module, "KEYPAD") == 0) {
 			keypad();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "simonsays") == 0) {
+		else if (strcmp(module, "SIMONSAYS") == 0) {
 			simonsays();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "whosonfirst") == 0) {
+		else if (strcmp(module, "WHOSONFIRST") == 0) {
 			whosonfirst();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "memory") == 0) {
+		else if (strcmp(module, "MEMORY") == 0) {
 			memory();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "morsecode") == 0) {
+		else if (strcmp(module, "MORSECODE") == 0) {
 			morsecode();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "complicatedwires") == 0) {
+		else if (strcmp(module, "COMPLICATEDWIRES") == 0) {
 			complicatedwires();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "wiresequence") == 0) {
+		else if (strcmp(module, "WIRESEQUENCE") == 0) {
 			wiresequence();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "maze") == 0) {
+		else if (strcmp(module, "MAZE") == 0) {
 			maze();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
 		}
-		else if (strcmp(module, "password") == 0) {
+		else if (strcmp(module, "PASSWORD") == 0) {
 			password();
 			cout << endl << "More Modules?(Y/N) ";
 			cin >> more;
@@ -136,23 +139,37 @@ void information()
 
 	cout << "Enter the Serial Number: ";
 	cin.getline(line, 7);
+	for (int i = 0; i < 7; i++)
+	{
+		line[i] = toupper(line[i]);
+	}
 	cout << "How many batteries? ";
 	cin >> ::batteries;
 	cout << "Is CAR illuminated?(Y/N) ";
+	CAR:
 	cin >> CAR;
 	if (toupper(CAR) == 'Y') {
 		::CAR = 1;
 	}
-	else {
+	else if (toupper(CAR) == 'N') {
 		::CAR = 0;
 	}
+	else {
+		cout << "Enter a valid response.";
+		goto CAR;
+	}
 	cout << "Is FRK illuminated?(Y/N) ";
+	FRK:
 	cin >> FRK;
 	if (toupper(FRK) == 'Y') {
 		::FRK = 1;
 	}
-	else {
+	else if (toupper(FRK) == 'N') {
 		::FRK = 0;
+	}
+	else {
+		cout << "Enter a valid response.";
+		goto FRK;
 	}
 	cout << "How many parallel ports? ";
 	cin >> ::Parallel;
@@ -320,20 +337,31 @@ void button()
 	char strip[7];
 
 	cout << endl << "What is the color of the button? ";
-	cin >> color;
+	cin.getline(color, 7);
+	for (int i = 0; i < 7; i++)
+	{
+		color[i] = toupper(color[i]);
+	}
 	cout << endl << "What is the text on the button? ";
-	cin >> text;
-	if (((::batteries > 2) && (::FRK == 1)) || ((::batteries > 1) && ((strcmp(text, "detonate") == 0))) || ((strcmp(color, "red") == 0) && (strcmp(text, "hold") == 0))) {
+	for (int i = 0; i < 9; i++)
+	{
+		text[i] = toupper(text[i]);
+	}
+	if (((::batteries > 2) && (::FRK == 1)) || ((::batteries > 1) && ((strcmp(text, "DETONATE") == 0))) || ((strcmp(color, "RED") == 0) && (strcmp(text, "HOLD") == 0))) {
 		cout << endl << "Press the button.";
 	}
 	else {
 		cout << endl << "Press and hold the button.";
 		cout << endl << "What is the color of the strip? ";
-		cin >> strip;
-		if ((strcmp(strip, "blue") == 0)) {
+		cin.getline(strip, 7);
+		for (int i = 0; i < 7; i++)
+		{
+			strip[i] = toupper(strip[i]);
+		}
+		if ((strcmp(strip, "BLUE") == 0)) {
 			cout << endl << "Release when there is a 4 in any position.";
 		}
-		else if ((strcmp(strip, "yellow") == 0)) {
+		else if ((strcmp(strip, "YELLOW") == 0)) {
 			cout << endl << "Release when there is a 5 in any position.";
 		}
 		else {
@@ -351,128 +379,143 @@ void simonsays()
 {
 	int strikes;
 	char color[7];
+	char next;
 
+	simonsays:
 	cout << endl << "How many strikes? ";
 	cin >> strikes;
+	cout << endl << "Which color is blinking? ";
+	cin.getline(color, 7);
+	for (int i = 0; i < 7; i++)
+	{
+		color[i] = toupper(color[i]);
+	}
 	if (strikes == 0) {
 		if (::vowel == 1) {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press blue.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press red.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press green.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
 		else {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press blue.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press green.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press red.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
 	}
 	else if (strikes == 1) {
 		if (::vowel == 1) {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press green.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press blue.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press red.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
 		else {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press red.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press blue.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press green.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
 	}
 	else if (strikes == 2) {
 		if (::vowel == 1) {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press green.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press red.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press blue.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
 		else {
-			cout << endl << "Which color is blinking? ";
-			cin >> color;
-			if (strcmp(color, "red") == 0) {
+			if (strcmp(color, "RED") == 0) {
 				cout << endl << "Press yellow.";
 			}
-			else if (strcmp(color, "blue") == 0) {
+			else if (strcmp(color, "BLUE") == 0) {
 				cout << endl << "Press green.";
 			}
-			else if (strcmp(color, "green") == 0) {
+			else if (strcmp(color, "GREEN") == 0) {
 				cout << endl << "Press blue.";
 			}
-			else if (strcmp(color, "yellow") == 0) {
+			else if (strcmp(color, "YELLOW") == 0) {
 				cout << endl << "Press red.";
 			}
 			else {
-				cout << endl << "Input in all lowercase with a valid color.";
+				cout << endl << "Input a valid color.";
+				goto simonsays;
 			}
 		}
+	}
+	next:
+	cout << endl << "Next color?(Y/N) ";
+	cin >> next;
+	if (toupper(next) == 'Y') {
+		goto simonsays;
+	}
+	else if (toupper(next) == 'N') {
+		return;
+	}
+	else {
+		cout << endl << "Enter a valid input.";
+		goto next;
 	}
 }
 
@@ -482,42 +525,44 @@ void whosonfirst()
 	char label[8];
 	char more;
 
-	do
-	{
 	checkDisplay:
 		cout << endl << "Enter the word on the display. ";
 		cin.getline(display, 9);
+		for (int i = 0; i < 9; i++)
+		{
+			display[i] = toupper(display[i]);
+		}
 
 		if (strcmp(display, "UR") == 0) {
 			cout << endl << "Enter the label of the first column, first row. ";
-			cin.getline(label, 8);
 		}
 		else if ((strcmp(display, "FIRST") == 0) || (strcmp(display, "OKAY") == 0) || (strcmp(display, "C") == 0)) {
 			cout << endl << "Enter the label of the second column, first row. ";
-			cin.getline(label, 8);
 		}
 		else if ((strcmp(display, "YES") == 0) || (strcmp(display, "NOTHING") == 0) || (strcmp(display, "LED") == 0) || (strcmp(display, "THEY ARE") == 0)) {
 			cout << endl << "Enter the label of the first column, second row. ";
-			cin.getline(label, 8);
 		}
 		else if ((strcmp(display, "BLANK") == 0) || (strcmp(display, "READ") == 0) || (strcmp(display, "RED") == 0) || (strcmp(display, "YOU") == 0) || (strcmp(display, "YOUR") == 0) || (strcmp(display, "YOU'RE") == 0) || (strcmp(display, "THEIR") == 0)) {
 			cout << endl << "Enter the label of the second column, second row. ";
-			cin.getline(label, 8);
 		}
-		else if ((strcmp(display, "emmpty") == 0) || (strcmp(display, "REED") == 0) || (strcmp(display, "LEED") == 0) || (strcmp(display, "THEY'RE") == 0)) {
+		else if ((strcmp(display, "EMPTY") == 0) || (strcmp(display, "REED") == 0) || (strcmp(display, "LEED") == 0) || (strcmp(display, "THEY'RE") == 0)) {
 			cout << endl << "Enter the label of the first column, third row. ";
-			cin.getline(label, 8);
 		}
 		else if ((strcmp(display, "DISPLAY") == 0) || (strcmp(display, "SAYS") == 0) || (strcmp(display, "NO") == 0) || (strcmp(display, "LEAD") == 0) || (strcmp(display, "HOLD ON") == 0) || (strcmp(display, "YOU ARE") == 0) || (strcmp(display, "THERE") == 0) || (strcmp(display, "SEE") == 0) || (strcmp(display, "CEE") == 0)) {
 			cout << endl << "Enter the label of the second column, third row. ";
-			cin.getline(label, 8);
 		}
 		else {
-			cout << endl << "Enter a valid display word in full uppercase unless the display is blank, then enter 'empty.'";
+			cout << endl << "Enter a valid display word unless the display is blank, then enter 'empty.'";
 			goto checkDisplay;
 		}
 
 	checkLabel:
+		cin.getline(label, 8);
+		for (int i = 0; i < 8; i++)
+		{
+			label[i] = toupper(label[i]);
+		}
+
 		if (strcmp(label, "READY") == 0) {
 			cout << endl << "Push YES, OKAY, WHAT, MIDDLE, LEFT, PRESS, RIGHT, BLANK, READY";
 		}
@@ -603,12 +648,23 @@ void whosonfirst()
 			cout << endl << "Push YOU'RE, NEXT, U, UR, HOLD, DONE, UH UH, WHAT?, UH HUH, YOU, LIKE";
 		}
 		else {
-			cout << endl << "Enter a valid label word in full uppercase.";
+			cout << endl << "Enter a valid label word.";
 			goto checkLabel;
 		}
-		cout << endl << "Next Stage?(Y/N) ";
-		cin >> more;
-	} while (toupper(more) == 'Y');
+	
+	next:
+	cout << endl << "Next stage?(Y/N) ";
+	cin >> more;
+	if (toupper(more) == 'Y') {
+		goto checkDisplay;
+	}
+	else if (toupper(more) == 'N') {
+		return;
+	}
+	else {
+		cout << endl << "Enter a valid input.";
+		goto next;
+	}
 
 }
 
